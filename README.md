@@ -31,7 +31,7 @@ java -jar ./target/blackjack-1.0.0.jar
 ## Features
 - Core Rules - Dealing cards, Hit/Stand, Ace Value, Winning Losing to dealer
 - Multiplayer - Up to four players
-- Betting - In increments of 5 up to the pot
+- Betting - In increments of 5 up to the pot value
 - Splitting - Splitting into and resolving multiple hands
 - Doubling Down - Dealing one more card and resolving with double the bet
-- Continuous Play - Play can be continued with new pots
+- Continuous Play - Play can be continued with updated pot values
