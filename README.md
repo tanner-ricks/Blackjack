@@ -2,6 +2,8 @@
 
 ---
 ## Runtime
+Ensure that you have java 11 installed and accessible as well as maven. 
+You will find the versions that were used below.
 ### Java
 ```
 openjdk 11.0.29 2025-10-21
