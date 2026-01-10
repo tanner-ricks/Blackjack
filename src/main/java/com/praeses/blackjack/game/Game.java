@@ -1,12 +1,14 @@
 package com.praeses.blackjack.game;
 
 import com.praeses.blackjack.card.Card;
-import com.praeses.blackjack.card.Rank;
 import com.praeses.blackjack.deck.Deck;
 import com.praeses.blackjack.player.Hand;
 import com.praeses.blackjack.player.Player;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Represents a game of blackjack

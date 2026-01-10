@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents a singel hand of blackjack
+ * Represents a single hand of blackjack
  */
 public class Hand {
 
@@ -17,7 +17,8 @@ public class Hand {
 
     /**
      * Gets the list of cards in this hand
-     * @return
+     * 
+     * @return The list of cards in this hand
      */
     public List<Card> cards() {
         return cards;
