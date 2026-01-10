@@ -7,41 +7,70 @@ import com.praeses.blackjack.deck.Deck;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a singel hand of blackjack
+ */
 public class Hand {
 
     private final List<Card> cards = new ArrayList<>();
     private double bet;
-    private boolean doubledDown = false;
 
+    /**
+     * Gets the list of cards in this hand
+     * @return
+     */
     public List<Card> cards() {
         return cards;
     }
 
+    /**
+     * Draws a card from the deck and places it in this hand
+     *
+     * @param deck The deck to be drawn from
+     */
     public void draw(Deck deck) {
         cards.add(deck.draw());
     }
 
+    /**
+     * Adds a card to this hand
+     *
+     * @param card The card to be added to the hand
+     * @return Whether the card was successfully added
+     */
     public boolean add(Card card) {
         return cards.add(card);
     }
 
-    public void clear() {
-        cards.clear();
-    }
-
+    /**
+     * Gets the bet for this hand
+     *
+     * @return The bet for this hand
+     */
     public double getBet() {
         return bet;
     }
 
+    /**
+     * Sets the bet for this hand if it is a valid bet
+     *
+     * @param bet The bet to be set
+     * @return Whether the bet was valid
+     */
     public boolean setBet(double bet) {
-        if (bet % 0.50 == 0.0) {
+        if (bet % 5.0 == 0.0) {
             this.bet = bet;
             return true;
         }
         return false;
     }
 
-    public int value() {
+    /**
+     * Gets the value for this hand using blackjack logic
+     *
+     * @return The value for this hand using blackjack logic
+     */
+    public int getValue() {
         int total = 0;
 
         for (Card card : cards) {
@@ -55,26 +84,47 @@ public class Hand {
         return total;
     }
 
+    /**
+     * Gets whether the hand is bust
+     *
+     * @return Whether the hand is bust
+     */
     public boolean isBust() {
-        return value() > 21;
+        return getValue() > 21;
     }
 
+    /**
+     * Gets whether the hand is blackjack
+     *
+     * @return Whether the hand is blackjack
+     */
     public boolean isBlackjack() {
-        return cards.size() == 2 && value() == 21;
+        return cards.size() == 2 && getValue() == 21;
     }
 
+    /**
+     * Gets whether the hand can be split
+     *
+     * @return Whether the hand can be split
+     */
     public boolean canSplit() {
         return cards.size() == 2 && cards.get(0).getRank() == cards.get(1).getRank();
     }
 
+    /**
+     * Gets whether the hand can be doubled down
+     *
+     * @return Whether the hand can be doubled down
+     */
     public boolean canDoubleDown() {
         return cards.size() == 2;
     }
 
-    public boolean isDoubledDown() {
-        return doubledDown;
-    }
-
+    /**
+     * Splits the hand and returns the new hand
+     *
+     * @return The new hand that was split off
+     */
     public Hand split() {
         Card cardToMove = cards.remove(1);
         Hand newHand = new Hand();
@@ -83,6 +133,9 @@ public class Hand {
         return newHand;
     }
 
+    /**
+     * Doubles down the bet
+     */
     public void doubleDown() {
         bet *= 2;
     }

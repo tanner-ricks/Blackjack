@@ -8,10 +8,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Represents a standard deck of cards
+ */
 public class Deck {
 
     private final List<Card> cards = new ArrayList<>();
 
+    /**
+     * Creates a deck of cards
+     */
     public Deck() {
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
@@ -20,14 +26,19 @@ public class Deck {
         }
     }
 
+    /**
+     * Shuffles the deck
+     */
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
+    /**
+     * Draws the top card from the deck
+     *
+     * @return the drawn card
+     */
     public Card draw() {
-        if (cards.isEmpty()) {
-            throw new IllegalStateException("Deck is empty");
-        }
         return cards.remove(cards.size() - 1);
     }
 
