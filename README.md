@@ -24,7 +24,14 @@ mvn clean package
 ```
 ---
 ## Run
-From the ropot of the git repository run the following command
+From the root of the git repository run the following command
 ```
 java -jar ./target/blackjack-1.0.0.jar
 ```
+## Features
+- Core Rules - Dealing cards, Hit/Stand, Ace Value, Winning Losing to dealer
+- Multiplayer - Up to four players
+- Betting - In increments of 5 up to the pot
+- Splitting - Splitting into and resolving multiple hands
+- Doubling Down - Dealing one more card and resolving with double the bet
+- Continuous Play - Play can be continued with new pots
