@@ -17,7 +17,7 @@ public class Hand {
 
     /**
      * Gets the list of cards in this hand
-     * 
+     *
      * @return The list of cards in this hand
      */
     public List<Card> cards() {

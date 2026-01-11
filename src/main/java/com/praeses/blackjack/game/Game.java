@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class Game {
 
     private final Scanner scanner = new Scanner(System.in);
-    private final Deck deck = new Deck();
     private final List<Player> players = new ArrayList<>();
     private final Player dealer = new Player("Dealer", 0);
+    private Deck deck = null;
 
     /**
      * Main play loop for the game
@@ -106,6 +106,7 @@ public class Game {
      * Deals the initial cards to each player and the dealer
      */
     private void initialDeal() {
+        deck = new Deck();
         deck.shuffle();
         deck.shuffle();
         for (Player player : players) {
